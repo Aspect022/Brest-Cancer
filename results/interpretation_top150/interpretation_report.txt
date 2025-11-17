@@ -1,0 +1,48 @@
+======================================================================
+MODEL INTERPRETATION REPORT - TOP 150 GENES
+======================================================================
+
+SHAP ANALYSIS SUMMARY:
+----------------------------------------------------------------------
+SHAP (SHapley Additive exPlanations) values quantify the
+contribution of each gene to the model's predictions.
+
+TOP 30 MOST IMPORTANT GENES (CONSENSUS RANKING):
+----------------------------------------------------------------------
+   1. 209389_x_at          (importance: 0.2699)
+   2. 204822_at            (importance: 0.2562)
+   3. 204767_s_at          (importance: 0.2253)
+   4. 203693_s_at          (importance: 0.1961)
+   5. 219051_x_at          (importance: 0.1859)
+   6. 209686_at            (importance: 0.1847)
+   7. 211645_x_at          (importance: 0.1359)
+   8. 208711_s_at          (importance: 0.1186)
+   9. 205225_at            (importance: 0.1160)
+  10. 201584_s_at          (importance: 0.1115)
+  11. 38158_at             (importance: 0.0996)
+  12. 201563_at            (importance: 0.0974)
+  13. 216588_at            (importance: 0.0973)
+  14. 205632_s_at          (importance: 0.0961)
+  15. 208651_x_at          (importance: 0.0877)
+  16. 201126_s_at          (importance: 0.0868)
+  17. 212021_s_at          (importance: 0.0822)
+  18. 203303_at            (importance: 0.0781)
+  19. 206391_at            (importance: 0.0699)
+  20. 212782_x_at          (importance: 0.0684)
+  21. 217378_x_at          (importance: 0.0673)
+  22. 204343_at            (importance: 0.0666)
+  23. 220192_x_at          (importance: 0.0642)
+  24. 213648_at            (importance: 0.0637)
+  25. 216042_at            (importance: 0.0614)
+  26. 201587_s_at          (importance: 0.0611)
+  27. 201554_x_at          (importance: 0.0583)
+  28. 213527_s_at          (importance: 0.0583)
+  29. 202107_s_at          (importance: 0.0580)
+  30. 208712_at            (importance: 0.0575)
+
+
+INTERPRETATION:
+----------------------------------------------------------------------
+- Higher SHAP values indicate stronger contribution to pCR prediction
+- Top genes represent key molecular signatures of treatment response
+- These genes can serve as potential biomarkers for personalized treatment
