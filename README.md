@@ -2,6 +2,21 @@
 
 A comprehensive machine learning pipeline for predicting pathological complete response (pCR) to neoadjuvant chemotherapy in breast cancer patients using gene expression data.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+## 📚 Documentation
+
+- **[Installation Guide](docs/INSTALLATION.md)** - Detailed setup instructions
+- **[Project Workflow](PROJECT_WORKFLOW.md)** - Step-by-step explanation of the entire pipeline
+- **[API Documentation](docs/API.md)** - Module and function reference
+- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
+- **[Contributing Guidelines](CONTRIBUTING.md)** - How to contribute to this project
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** - Community standards
+- **[Security Policy](SECURITY.md)** - Security guidelines and reporting
+- **[Changelog](CHANGELOG.md)** - Version history and updates
+
 ## 🎯 Overview
 
 This project implements a complete end-to-end machine learning workflow for breast cancer treatment response prediction. It integrates multiple public gene expression datasets (GEO) and clinical data (TCGA) to identify molecular biomarkers that can predict treatment outcomes in breast cancer patients, particularly those with triple-negative breast cancer (TNBC).
@@ -30,35 +45,32 @@ This project implements a complete end-to-end machine learning workflow for brea
 - **TCGA-BRCA**: ~1,198 breast cancer patients with comprehensive clinical data
 - **Purpose**: Additional validation and external clinical feature analysis
 
-## 🚀 Installation
+## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.8 or higher
-- pip package manager
+- 8 GB RAM minimum (16 GB recommended)
+- 10 GB free disk space
 
-### Setup
+### Installation
 
-1. **Clone the repository**
 ```bash
+# Clone the repository
 git clone https://github.com/Aspect022/Brest-Cancer.git
 cd Brest-Cancer
-```
 
-2. **Create a virtual environment** (recommended)
-```bash
+# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
 
-3. **Install dependencies**
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-4. **Create project structure**
-```bash
+# Create project structure
 python setup_project.py
 ```
+
+**For detailed installation instructions, see [Installation Guide](docs/INSTALLATION.md)**
 
 ## 📖 Usage
 
@@ -228,35 +240,55 @@ See `requirements.txt` for complete list with versions.
 
 ## 🔍 Troubleshooting
 
-### Common Issues
+Having issues? Check our comprehensive troubleshooting guide:
 
-**Issue**: Dataset download fails
+**[📖 Troubleshooting Guide](docs/TROUBLESHOOTING.md)**
+
+### Quick Fixes
+
+**Dataset download fails:**
 ```bash
-# Solution: Try re-downloading specific dataset
-python get-geo.py
+python get-geo.py  # Retry download
+python fix_GSE32646_download.py  # Fix specific dataset
 ```
 
-**Issue**: GSE32646 download problems
+**Memory errors:**
 ```bash
-# Solution: Use the fix script
-python fix_GSE32646_download.py
+python model_training.py --n_features 50  # Use fewer features
 ```
 
-**Issue**: Memory errors during training
-```bash
-# Solution: Use fewer features or reduce cross-validation folds
-python model_training.py --n_features 50
-```
+**Poor performance:**
+- Check class balance in labels
+- Try different feature counts (50, 100, 150)
+- Verify SMOTE is applied
+
+For detailed solutions, see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md).
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+
+### Ways to Contribute
+
+- 🐛 Report bugs or issues
+- 💡 Suggest new features
+- 📖 Improve documentation
+- 🔬 Add new datasets or models
+- 🧪 Write tests
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## 📄 License
 
-This project is provided for research and educational purposes. Please cite appropriately if you use this code in your research.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Research Use Disclaimer**: This software is intended for research and educational purposes only. It is NOT intended for clinical use or medical decision-making. See [LICENSE](LICENSE) for full terms.
 
 ## 🙏 Acknowledgments
 
-- **GEO Database**: For providing public gene expression datasets
-- **TCGA Project**: For comprehensive cancer genomics data
-- **UCSC Xena**: For easy access to TCGA clinical data
+- **[GEO Database](https://www.ncbi.nlm.nih.gov/geo/)**: For providing public gene expression datasets
+- **[TCGA Project](https://www.cancer.gov/tcga)**: For comprehensive cancer genomics data
+- **[UCSC Xena](https://xenabrowser.net/)**: For easy access to TCGA clinical data
 
 ## 📚 Citation
 
@@ -267,14 +299,43 @@ If you use this code in your research, please cite:
   title={Breast Cancer Treatment Response Prediction},
   author={Aspect022},
   year={2024},
+  version={1.0.0},
   url={https://github.com/Aspect022/Brest-Cancer}
 }
 ```
 
-## 📧 Contact
+## 📧 Contact & Support
+
+- **Issues**: [GitHub Issues](https://github.com/Aspect022/Brest-Cancer/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Aspect022/Brest-Cancer/discussions)
+- **Documentation**: See [docs/](docs/) folder
 
 For questions, issues, or collaborations, please open an issue on GitHub.
 
+## ⭐ Show Your Support
+
+If you find this project useful, please consider:
+- ⭐ Starring the repository
+- 📢 Sharing with colleagues
+- 🐛 Reporting bugs
+- 💡 Suggesting improvements
+
+## 📜 Related Resources
+
+### Research Papers
+- Original dataset publications in GEO
+- SHAP interpretability: [Lundberg & Lee (2017)](https://arxiv.org/abs/1705.07874)
+- SMOTE: [Chawla et al. (2002)](https://arxiv.org/abs/1106.1813)
+
+### Similar Projects
+- [scikit-survival](https://github.com/sebp/scikit-survival) - Survival analysis
+- [PyDESeq2](https://github.com/owkin/PyDESeq2) - Differential expression
+
+### Learning Resources
+- [SHAP Documentation](https://shap.readthedocs.io/)
+- [XGBoost Documentation](https://xgboost.readthedocs.io/)
+- [GEOparse Documentation](https://geoparse.readthedocs.io/)
+
 ---
 
-**Note**: This is a research tool and should not be used for clinical decision-making without proper validation and regulatory approval.
+**⚠️ Important Note**: This is a research tool and should not be used for clinical decision-making without proper validation and regulatory approval.
